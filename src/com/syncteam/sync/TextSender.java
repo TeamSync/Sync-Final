@@ -1,6 +1,6 @@
 package com.syncteam.sync;
 
-import com.example.textmessagetest.R;
+import com.syncteam.sync.R;
 
 import android.app.Activity;
 import android.os.Bundle;
