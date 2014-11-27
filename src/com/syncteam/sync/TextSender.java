@@ -50,6 +50,7 @@ public class TextSender extends Activity {
 		});
 	}
 }
+//Ellie was here! 11/26 at 5:25 PM
 
 /*
  * import android.support.v7.app.ActionBarActivity; import android.os.Bundle;
