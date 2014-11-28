@@ -8,15 +8,14 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="20"
         android:maxSdkVersion="21" />
-    
-
+   
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.syncteam.sync.TextSender"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    
+        <activity 
+            android:name=".TextSender" />
     </application>
     <uses-permission android:name="android.permission.SEND_SMS">    
     </uses-permission>

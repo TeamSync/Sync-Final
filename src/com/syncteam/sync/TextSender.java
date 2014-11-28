@@ -20,7 +20,7 @@ public class TextSender extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.layoutdescription);
+		setContentView(R.layout.textsenderlayout);
 
 		button = (Button) findViewById(R.id.button);
 		editPhoneNum = (EditText) findViewById(R.id.editPhoneNum);
@@ -51,6 +51,12 @@ public class TextSender extends Activity {
 	}
 }
 //Ellie was here! 11/26 at 5:25 PM
+
+
+
+
+
+
 
 /*
  * import android.support.v7.app.ActionBarActivity; import android.os.Bundle;
