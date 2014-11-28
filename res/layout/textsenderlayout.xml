@@ -23,16 +23,28 @@
         android:id="@+id/SMSLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter SMS Message : "
+        android:text="Enter Watch Time : "
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <EditText
-        android:id="@+id/editSMS"
+        android:id="@+id/editWatchTime"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:lines="5"
         android:gravity="top" />
+    
+	<TextView
+        android:id="@+id/youtubeLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter YouTube Link : "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	 
+	<EditText
+        android:id="@+id/editYouTubeLink"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+	
     
     <Button
         android:id="@+id/button"

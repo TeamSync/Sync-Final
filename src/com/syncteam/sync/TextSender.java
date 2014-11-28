@@ -15,7 +15,8 @@ public class TextSender extends Activity {
 
 	Button button;
 	EditText editPhoneNum;
-	EditText editSMS;
+	EditText editWatchTime;
+	EditText editYouTubeLink;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,8 @@ public class TextSender extends Activity {
 
 		button = (Button) findViewById(R.id.button);
 		editPhoneNum = (EditText) findViewById(R.id.editPhoneNum);
-		editSMS = (EditText) findViewById(R.id.editSMS);
+		editWatchTime = (EditText) findViewById(R.id.editWatchTime);
+		editYouTubeLink= (EditText) findViewById(R.id.editYouTubeLink);
 
 		button.setOnClickListener(new OnClickListener() {
 
@@ -32,7 +34,7 @@ public class TextSender extends Activity {
 			public void onClick(View v) {
 
 				String phoneNo = editPhoneNum.getText().toString();
-				String sms = editSMS.getText().toString();
+				String sms = "Let's watch " + editYouTubeLink.getText().toString() + "at " + editWatchTime.getText().toString();
 
 				try {
 					SmsManager smsManager = SmsManager.getDefault();
@@ -41,7 +43,7 @@ public class TextSender extends Activity {
 							Toast.LENGTH_LONG).show();
 				} catch (Exception e) {
 					Toast.makeText(getApplicationContext(),
-							"SMS faild, please try again later!",
+							"SMS failed, please try again later!",
 							Toast.LENGTH_LONG).show();
 					e.printStackTrace();
 				}
