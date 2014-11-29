@@ -30,7 +30,8 @@
         android:id="@+id/editWatchTime"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="top" />
+        android:gravity="top"
+        android:inputType="phone"  />
     
 	<TextView
         android:id="@+id/youtubeLink"

@@ -5,6 +5,7 @@ import com.syncteam.sync.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,6 +23,8 @@ public class TextSender extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.textsenderlayout);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		button = (Button) findViewById(R.id.button);
 		editPhoneNum = (EditText) findViewById(R.id.editPhoneNum);
@@ -34,7 +37,7 @@ public class TextSender extends Activity {
 			public void onClick(View v) {
 
 				String phoneNo = editPhoneNum.getText().toString();
-				String sms = "Let's watch " + editYouTubeLink.getText().toString() + "at " + editWatchTime.getText().toString();
+				String sms = "Let's watch " + editYouTubeLink.getText().toString() + " at " + editWatchTime.getText().toString() + "!";
 
 				try {
 					SmsManager smsManager = SmsManager.getDefault();
@@ -50,6 +53,14 @@ public class TextSender extends Activity {
 
 			}
 		});
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == android.R.id.home) {
+		finish();	
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }
 //Ellie was here! 11/26 at 5:25 PM
