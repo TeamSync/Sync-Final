@@ -1,16 +1,12 @@
 package com.syncteam.sync;
 
-public class SMSReceiver {
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.telephony.SmsMessage;
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+// This code for receiving text messages came from an online source that I found... 
 
-	}
-
-}
 public class SMSReceiver extends BroadcastReceiver {
     private final String DEBUG_TAG = getClass().getSimpleName().toString();
     private static final String ACTION_SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
@@ -18,7 +14,7 @@ public class SMSReceiver extends BroadcastReceiver {
     private Intent mIntent;
 
     // Retrieve SMS
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive1(Context context, Intent intent) {
         mContext = context;
         mIntent = intent;
 
@@ -75,5 +71,11 @@ public class SMSReceiver extends BroadcastReceiver {
 	*/
 	protected void showNotification(int contactId, String message) {
 	//Display notification...
+	}
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		// TODO Auto-generated method stub
+		
 	}
 }
