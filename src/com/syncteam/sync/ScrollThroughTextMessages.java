@@ -83,6 +83,9 @@ public class ScrollThroughTextMessages (String message){
 		String URL = "";
 		String Time = "";
 		String[] words = new String[5];
+		String[] arrayFinal = new String [2];
+		String timeMinusExclamationPoint;
+		//Boolean rightTypeOfMessage;
 		
 		//int IndexOf = textMessageInput.indexOf(" ");
 		//URL = textMessageInput.substring(0, IndexOf);
@@ -100,12 +103,34 @@ public class ScrollThroughTextMessages (String message){
 		//System.out.println(words[3]);
 		//System.out.println(words[4]);
 		
-		URL = words[2];
-		Time = words[4];
-		String timeMinusExclamationPoint = Time.substring(0, Time.length() -1);
+		//test to see if its the right method
+		if (words[0].toString() == "Let's" )
+		{
+			if (words[1].toString() == "watch")
+			{
+				
+				URL = words[2];
+				Time = words[4];
+				timeMinusExclamationPoint = Time.substring(0, Time.length() -1);
+				//int counter = 0;
+				arrayFinal[1]=URL;
+				arrayFinal[2]=Time;
+			}
+			
+		}
+		else
+		{
+			break;
+		}
+		
 		//System.out.println("URL = " + URL);
+		/*public static MyResult something() {
+		    int number1 = 1;
+		    int number2 = 2;
+
+		    return new MyResult(number1, number2);*/
 		//System.out.println("Time = " + timeMinusExclamationPoint);
-		return words;
+		return arrayFinal;
 	
 	}
 	
