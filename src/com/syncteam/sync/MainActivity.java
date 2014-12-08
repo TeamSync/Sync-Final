@@ -19,6 +19,11 @@ public class MainActivity extends Activity {
 		Intent intent =  new Intent(this, SendVideos.class);
 		startActivity(intent);
 	}
+	public void gotoActivityViewVideos(View v)
+	{
+		Intent intent = new Intent(this, YouTubeEmbed.class);
+		startActivity(intent);
+	}
 }
 
 

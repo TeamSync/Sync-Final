@@ -27,6 +27,8 @@
             android:name=".ViewVideos" />
         <activity
             android:name=".SendVideos" />
+        <activity
+            android:name="com.syncteam.sync.YouTubeEmbed" />
        
        
         

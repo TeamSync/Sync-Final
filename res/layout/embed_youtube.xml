@@ -12,12 +12,7 @@
         android:text="Hello YouTube API"
         android:layout_margin="12dip"/>
     
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Goodbye YouTube API"
-        android:layout_margin="12dip"/>
-    
+   
    <com.google.android.youtube.player.YouTubePlayerView
               android:id="@+id/youtube_view"
               android:layout_width="wrap_content"
