@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
 	}
 	public void gotoActivity(View v)
 	{
-		Intent intent =  new Intent(this, TextSender.class);
+		Intent intent =  new Intent(this, SendVideos.class);
 		startActivity(intent);
 	}
 }
