@@ -22,7 +22,7 @@ public class SendVideos extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.textsenderlayout);
+		setContentView(R.layout.send_videos);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
