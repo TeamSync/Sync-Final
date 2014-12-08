@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class TextSender extends Activity {
+public class SendVideos extends Activity {
 
 	Button button;
 	EditText editPhoneNum;
