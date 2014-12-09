@@ -9,7 +9,7 @@
         android:id="@+id/phoneNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Phone Number : "
+        android:text="@string/enter_phone_number"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <EditText
@@ -23,7 +23,7 @@
         android:id="@+id/SMSLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Watch Time : "
+        android:text="@string/enter_watch_time"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <EditText
@@ -37,7 +37,7 @@
         android:id="@+id/youtubeLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter YouTube Link : "
+        android:text="@string/enter_youtube_link"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 	 
 	<EditText
@@ -51,6 +51,6 @@
         android:id="@+id/button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Send" />
+        android:text="@string/send" />
     
 </LinearLayout>

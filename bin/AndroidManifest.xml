@@ -23,13 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity 
-            android:name=".TextSender" />
-        <receiver android:name="com.myexample.receivers.SMSReceiver" >
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
+        <activity
+            android:name=".ViewVideos" />
+        <activity
+            android:name=".SendVideos" />
+        <activity
+            android:name="com.syncteam.sync.YouTubeEmbed" />
+       
+       
         
     </application>
     <uses-permission android:name="android.permission.SEND_SMS">    

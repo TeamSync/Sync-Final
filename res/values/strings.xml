@@ -7,5 +7,9 @@
     <string name="welcome">Welcome! </string>
     <string name="send_video">Send Video</string>
     <string name="view_videos">View Videos</string>
+    <string name="enter_phone_number">Enter Phone Number:</string>
+    <string name="enter_watch_time">Enter Watch Time:</string>
+    <string name="enter_youtube_link">Enter Youtube Link:</string>
+    <string name="send">Send Invite</string>
 
 </resources>
