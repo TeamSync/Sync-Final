@@ -11,5 +11,6 @@
     <string name="enter_watch_time">Enter Watch Time:</string>
     <string name="enter_youtube_link">Enter Youtube Link:</string>
     <string name="send">Send Invite</string>
+    <string name="received_invites">Received Invites</string>
 
 </resources>

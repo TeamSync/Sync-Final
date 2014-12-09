@@ -1,59 +1,95 @@
 package com.syncteam.sync;
 
 import java.util.Arrays;
+import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.telephony.SmsManager;
 
-public class ViewVideos extends Activity 
+
+
+// Array of options --> ArrayAdapter --> ListView
+// The listview only shows layouts, one after another
+// List view: (views: da_items.xml)
+// Create this layout.. 
+
+
+
+public class ViewVideos extends Activity
 {
-	
-	
 	public static String msgData = "";
-	
-
-
 	/**
-	 * @param args
 	 */
 	TextView display;
-    //static SMSReceiver2 message = new SMSReceiver2();
-	//static SMSReceiver2 incomingMessage = new SMSReceiver2();
-	//incomingMessage.message = "Bob";
-	
-	//This ^ actually pulls the text message string from the class SMSReceiver.java
-	
+    
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.view_videos);
-		display = (TextView) findViewById(R.id.textView1);
+		setContentView(R.layout.received_list);
+		//display = (TextView) findViewById(R.id.textView1); //this was incorrect.... 
 		System.out.println("Hello, this is working.");
 		
-		//Downloaded from stackoverflow
-		//Reads all (???) existing texts on phone and returns them in one long string 
-		Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"), null, null, null, null);
-		cursor.moveToFirst();
-
-		do{
-			for(int idx=0;idx<cursor.getColumnCount();idx++)
-			{
-				msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
-			}
-		}while(cursor.moveToNext());
+		//First get the ListView to work with
+		//The actually put the items in it
 		
-		Log.d("ViewVideos: See original msgData string", msgData);
-		displayVideoInvitations();		
+		
+		//Downloaded from Stackoverflow.com
+		//Reads all (???) existing texts on phone and returns them in one long string 
+		//Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"), null, null, null, null);
+		//cursor.moveToFirst();
+
+		//do{
+			//for(int idx=0;idx<cursor.getColumnCount();idx++)
+			//{
+				//msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
+			//}
+		//}
+		//while(cursor.moveToNext());
+		
+		//Log.d("ViewVideos: See original msgData string", msgData);
+		//displayVideoInvitations();	//creates and returns String[] arrayFinal
+		
+		//String[] arrayFinal = displayVideoInvitations(); //reinitializes it so that it can be used outside of the method displayVideoInvitations()
+		
+		String[] arrayFinal = {"youtube.com, 5:00", "youtube.com, 4:00", "youtube.com, 3:00", "youtube.com, 2:00", "youtube.com, 1:00"};
+		
+		Log.d(PRINT_SERVICE, "The listView should have been created");
+		
+		populateListView(arrayFinal); //passes the newly created arrayFinal[] into populateListView which will populate our ListView
+		
+		
 	}
 	
-	public static String [] displayVideoInvitations ()
+	private void populateListView(String[] arrayFinal)
+	{
+		//Create list of items... not necessary we have an array "arrayFinal"
+		// String[] myItems
+		
+		// Build Adapter
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>
+				(this,         //Context for this activity
+				R.layout.da_item,  //Layout to use (create)
+				arrayFinal); //Items to be displayed //Would originally take in the strings.. 
+		
+		// Configure the list view... 
+		ListView invites = (ListView) findViewById(R.id.list);
+		invites.setAdapter(adapter);
+	}
+	
+	
+	
+	
+	/*public static String [] displayVideoInvitations ()
 	{
 	
 		String[] words = new String [5];
@@ -81,7 +117,7 @@ public class ViewVideos extends Activity
 					/*timeMinusExclamationPoint = Time.substring(0, Time.length() -1);
 					this piece of code would chop off the exclamation mark from the end of the time in the original message
 					but we don't need this because the time and exclamation mark are separated by spaces*/
-					arrayFinal[0]=URL;
+					/*arrayFinal[0]=URL;
 					arrayFinal[1]=Time;
 					Log.d("ViewVideos: See if arrayFinal is picking up corr. texts", "arrayFinal: " + Arrays.toString(arrayFinal));
 					return arrayFinal; 
@@ -92,7 +128,7 @@ public class ViewVideos extends Activity
 		Log.d("ViewVideos: See if arrayFinal is appropriate in case of no corr. texts", "arrayFinal: " + Arrays.toString(arrayFinal));
 		return arrayFinal;
 		
-	}
+	}*/
 	
 	//This adds a back button
 	@Override
